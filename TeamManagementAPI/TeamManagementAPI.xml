@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TeamManagementAPI</name>
+    </assembly>
+    <members>
+        <member name="T:TeamManagementAPI.Controllers.BaseController">
+            <summary>
+            Base controller for the controllers
+            </summary>
+        </member>
+        <member name="T:TeamManagementAPI.Controllers.v1.TeamController">
+            <summary>
+            Team Controller init
+            </summary>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.#ctor(Microsoft.Extensions.Logging.ILogger{TeamManagementAPI.Controllers.v1.TeamController},Application.Abstractions.Repositories.ITeamServices)">
+            <summary>
+            Team Controller using REST method
+            </summary>
+            <param name="logger"></param>
+            <param name="team"></param>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.AddTeam(Shared.DTO.Team.Request.TeamRequests.TeamInputModel)">
+            <summary>
+            Add a new team to the system
+            </summary>
+            <param name="teamInputModel"></param>
+            <returns>New Team Profile</returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.LoginWithEmailAndPassword(Shared.DTO.General.APIAuthentication.Request.AuthenticationModel)">
+            <summary>
+            Login endpoint for the team to access their dashboard
+            </summary>
+            <param name="model"></param>
+            <remarks>The team should be authenticated with authorization</remarks>>
+            <response code="200">Returns if the team was successfully authenticated</response>
+            <response code="400">Returns if the team failed to be authenticated or model parsed error</response>
+            <returns>Team details</returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.GetAllTeams">
+            <summary>
+            Get All registered teams in the system
+            </summary>
+            <returns>Registered Teams</returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.AddTeamImage(Microsoft.AspNetCore.Http.IFormCollection)">
+            <summary>
+            Upload player's images request
+            </summary>
+            <param name="formCollection"></param>
+            <returns>Player code</returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.GetAllClubPartners(System.Int64)">
+            <summary>
+            Get all club partners
+            </summary>
+            <returns>All club partners</returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.GetAllPlayers(System.Int64)">
+            <summary>
+            Get all players based on the team id provided
+            Note: teamId(8923923) is to be provided in the request
+            </summary>
+            <param name="teamId"></param>
+            <returns>Team players</returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.GetAllKits(System.Int64)">
+            <summary>
+            Get all the team's kits from the system
+            Note:The teamId e.g teamId(34830948), should be provided
+            </summary>
+            <param name="teamId"></param>
+            <returns>Team's kits</returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v2.ClubController.AddNewTeam(Shared.DTO.Team.Request.TeamRequests.TeamInputModel)">
+            <summary>
+            Creates a new club 
+            </summary>
+            <param name="player"></param>
+            <response code="200">Return if the club was created</response>
+            <response code="400">Return if the club was not model was not able to parse or the club wouldn't be saved</response>
+            <returns>Returns the new created club</returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v2.ClubController.GetAllTeams">
+            <summary>
+            Returns all Clubs in the system
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TeamManagementAPI.Controllers.v2.ClubController.AddTeamKit(Domain.Models.Team.ClubKitsModel)">
+            <summary>
+            Add new team kit
+            </summary>
+            <param name="clubKitsModel"></param>
+            <returns>Team Kit</returns>
+        </member>
+    </members>
+</doc>

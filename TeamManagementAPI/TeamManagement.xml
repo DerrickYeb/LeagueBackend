@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TeamManagementAPI</name>
+    </assembly>
+    <members>
+        <member name="M:TeamManagementAPI.Controllers.v1.TeamController.AddTeam(Shared.DTO.Team.Request.TeamRequests.TeamInputModel)">
+            <summary>
+            Add a new team to the system
+            </summary>
+            <param name="teamInputModel"></param>
+            <returns>New Team Profile</returns>
+        </member>
+    </members>
+</doc>
